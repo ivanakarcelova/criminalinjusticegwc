@@ -10,6 +10,16 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+			#map {
+				height: 500px;
+				width: 100%;
+			}
+		</style>
 </head>
 
 <body>
@@ -25,6 +35,7 @@
 	</header>
 
 	<header>
+		<h1>   </h1>
 		<h1 align="center" style= font-family:'Trajan Bold';> M A P .</h1>
 	</header>
 
@@ -33,19 +44,24 @@
 			<p style= font-family:'Serif';>For a while, it has been known that there was a significant gap between the number of prisoners
 				in the United States compared to other countries around the globe. After some research, we were able to compile this information
 				and present it through a map. This map below represents the number of prisoners found in each country as of 2018.</p>
-
 		</div>
 
-		<style>
-		      #map-canvas {
-		        width: 100%;
-		        height: 500px;
-		      }
+		<div id="map"></div>
+		<script>
+				function initMap(){
+					var location = {lat: -25.363, lng: }
+					var uluru = {lat: -25.344, lng: 131.036};
 
-		    </style>
-
-		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?language=fra&amp;sensor=false"></script>
-		<script type="text/javascript">
+					  var map = new google.maps.Map(
+					      document.getElementById('map'), {zoom: 4, center: location});
+					  // The marker, positioned at Uluru
+					  var marker = new google.maps.Marker({position: uluru, map: map});
+					}
+					    </script>
+					    <script async defer
+					    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+					    </script>
+			</script>
 
 </div>
 
